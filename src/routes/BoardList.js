@@ -26,8 +26,10 @@ const BoardList = () => {
       .map((e) => e.join('='))
       .join('&');
 
+    const baseUrl = process.env.REACT_APP_Server_IP;
+    console.log("baseUrl" + baseUrl)
     const resp = await (
-      await axios.get('//localhost:8080/board?' + queryString)
+      await axios.get(baseUrl + '/board?' + queryString)
     ).data; // 2) 게시글 목록 데이터에 할당
 
     setBoardList(resp.data); // 3) boardList 변수에 할당
