@@ -13,6 +13,8 @@ const BoardWrite = () => {
 
   const { title, createdBy, contents } = board; //비구조화 할당
 
+  const baseUrl = process.env.REACT_APP_Server_IP;
+
   const onChange = (event) => {
     const { value, name } = event.target; //event.target에서 name과 value만 가져오기
     setBoard({
@@ -22,7 +24,7 @@ const BoardWrite = () => {
   };
 
   const saveBoard = async () => {
-    await axios.post(`//localhost:8080/board`, board).then((res) => {
+    await axios.post(baseUrl + `/board`, board).then((res) => {
       alert('등록되었습니다.');
       navigate('/board');
     });
