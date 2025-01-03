@@ -11,7 +11,7 @@ import BoardUpdate from './routes/BoardUpdate';
 
 function App() {
   return (
-    <Routes>
+    <Routes> 
       <Route path="/" element={<Home/>}/>
       <Route path="/board" element={<BoardList/>}/>
       <Route path="/board/:idx" element={<BoardDetail/>}/>
